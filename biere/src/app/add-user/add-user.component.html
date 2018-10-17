@@ -1,0 +1,13 @@
+<form (ngSubmit)="onSubmit(f)" #f="ngForm" class="form-group">
+
+  <label for="nom"> nom : </label>
+  <input class="form-control" type="text" name="nom" ngModel>
+
+  <label for="prenom"> prenom : </label>
+  <input class="form-control" type="text" name="prenom" ngModel>
+
+  <label for="age"> age : </label>
+  <input class="form-control" type="text" name="age" ngModel>
+
+  <button class="btn btn-success mt-3"> Enregistrer </button>
+</form>

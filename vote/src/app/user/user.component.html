@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1> Partie Administration</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-6 mt-5 mb-5" *ngFor="let stagiaire of stagiaires, let i = index">
+          <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src=".../100px180/" alt="">
+              <div class="card-body">
+                <h5 class="card-title"><strong> {{stagiaire.nom}} </strong></h5>
+                <p class="card-text">{{ stagiaire.prenom}}</p>
+                <p class="card-text"> AGE : {{ stagiaire.age}} ans</p>
+                <p class="card-text"> votes : {{ stagiaire.vote}}</p>
+                <p class="card-text"> indice : {{ i }}</p>
+              </div>
+
+              <button class="btn btn-info mb-3" (click)="votePour(i)"> Pour </button>
+              <button class="btn btn-danger mb-3" (click)="voteContre(i)"> Contre </button>
+          </div>
+      </div>
+    </div>
+  </div>

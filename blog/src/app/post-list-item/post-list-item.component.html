@@ -1,0 +1,16 @@
+<li class="list-group-item border-info mb-5"
+[ngClass]="{  'list-group-item-danger': article.likes < 0,
+              'list-group-item-success': article.likes > 0,
+              'd-none': actif === false}">
+
+    <strong> {{ article.title }} </strong> <br>
+    {{ article.content }} <br>
+    {{ article.dateDuJour | date:'dd-MM-yyyy'}} <br>
+    <h6> Like : {{ article.likes }}</h6><br>
+    <img class="w-50 mb-5" src="{{article.image}}" alt=""> <br>
+
+    <button class="btn btn-info" (click)="plusLike()"> Like </button>
+
+    <button class="btn btn-danger  ml-5" (click)="dislike()"> Dislike </button>
+
+  </li>

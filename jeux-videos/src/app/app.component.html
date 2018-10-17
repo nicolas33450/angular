@@ -1,0 +1,45 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }} §§§
+  </h1>
+  <img class="mt-5 mb-5 w-75"  alt="Angular Logo" src="./src/assets/images/jeu1.jpeg">
+</div>
+<app-listing  [title]="'Mario'"
+              [console]="'switch'"
+              [dateSortie]="'30.11.2018'"
+              [editeur]="'Nintendo'"
+              [stock]="'true'">
+</app-listing>
+
+<app-listing  [title]="'Double-Dragon'"
+              [console]="'switch'"
+              [dateSortie]="20.11.2017"
+              [editeur]="'Nintendo'"
+              [stock]="true">
+</app-listing>
+
+<app-listing  [title]="'Street-Fighter'"
+              [console]="'switch'"
+              [dateSortie]="'15.11.2018'"
+              [editeur]="'Nintendo'"
+              [stock]="true">
+</app-listing>
+
+<app-listing-for *ngFor="let game of games"
+                        [title]= "game.title"
+                        [stock]= "game.stock"
+                        [dateSortie]= "game.dateSortie"
+                        [console]= "game.console"
+                        [like]="game.like">
+
+</app-listing-for>
+<app-listing-for2 *ngFor="let game of games"
+                  [game] = 'game'>
+
+</app-listing-for2>
+
+<input type="text" [(ngModel)]="titleGame"><br>
+Nouveau jeu : {{ titleGame}} <br>
+
+<button class="btn btn-info mb-5 w-100" [disabled]='!auth' (click)="toutVider()"> Vider </button>

@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row border border-info">
+    <div class="col-12 col-md-3 border border-info" *ngFor="let item of biere">
+      <strong class="mb-3"> {{ item.name}} </strong> <br>
+      <span class="mt-5"> {{ item.tagline}} </span><br>
+      <img class="w-25 mt-5 pb-3" src="{{ item.image_url}}" alt=""> <br>
+      <span class="mt-5"> VOL :  {{ item.ph}} </span><br>
+    </div>
+  </div>
+</div>
+
