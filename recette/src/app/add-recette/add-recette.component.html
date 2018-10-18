@@ -1,0 +1,13 @@
+<form (ngSubmit)="onSubmit(f)" #f="ngForm" class="form-group formu p-3">
+
+    <label for="nom"> Nom du plat : </label>
+    <input class="form-control" type="text" name="nom" ngModel>
+
+    <label for="origine"> Origine du plat : </label>
+    <input class="form-control" type="text" name="origine" ngModel>
+
+    <label for="etat"> etat : </label>
+    <input class="form-control" type="number" name="etat" ngModel>
+
+    <button class="btn btn-success mt-3"> Enregistrer </button>
+</form>

@@ -1,0 +1,29 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-6 mt-5 mb-5" *ngFor="let recette of recettes, let i = index">
+
+        <div class="card mx-auto" style="width: 18rem;">
+
+            <div class="card-body">
+              <h5 class="card-title"><strong> {{recette.nom}} </strong></h5>
+              <img src="" alt="">
+              <p class="card-text">{{ recette.origine }}</p>
+              <div class="row text-center">
+                <div class="col-12 col-md-6 ">
+                  <button class="btn btn-info mb-3" (click)="votePour(i)"> LIKE </button>
+                </div>
+                <div class="col-12 col-md-6 ">
+                  <button class="btn btn-danger mb-3" (click)="supp(i)"> X </button>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+
+
+    </div>
+  </div>
+

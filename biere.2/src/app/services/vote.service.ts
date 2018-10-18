@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Stagiaire } from '../stagiaire';
+import { Recette } from '../recette';
 import { Router } from '@angular/router';
 import { HttpClient} from '@angular/common/http';
 
@@ -8,37 +8,37 @@ import { HttpClient} from '@angular/common/http';
 })
 export class VoteService {
 
-  stagiaires : any[];
+  recettes : any[];
 
   constructor(private router: Router, private httpClient: HttpClient) { }
 
   getClient(){
-    this.httpClient.get('https://ifpa-b68e4.firebaseio.com/stagiaires.json').subscribe(
+    this.httpClient.get('').subscribe(
       (data) => {
       console.log(Object.values(data));
-      this.stagiaires = Object.values (data);
+      this.recettes = Object.values (data);
     })
-    return this.stagiaires
+    return this.recettes
   }
 
   votePour(i){
-    this.stagiaires[i].vote ++;
+    this.recettes[i].vote ++;
   }
   voteContre(i){
-    this.stagiaires[i].vote --;
+    this.recettes[i].vote --;
   }
   ajoutStagiaire(obj){
 
-    let stagiaire = new Stagiaire(obj.nom, obj.prenom, obj.age, 0);
+    let stagiaire = new Recette(obj.nom, obj.origine);
     this.router.navigate(['user'])
 
     this.httpClient
-    .post('https://ifpa-b68e4.firebaseio.com/stagiaires.json', stagiaire)
+    .post('', stagiaire)
     .subscribe(() =>{
         console.log('ok');
     })
   }
   supp(i){
-    this.stagiaires.splice(i,1);
+    this.recettes.splice(i,1);
   }
 }
