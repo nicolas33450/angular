@@ -25,14 +25,13 @@ export class RecetteService {
   }
 
   ajoutRecette(obj){
-
     let recettes = new Recette(obj.nom, obj.origine,obj.etat);
-    this.router.navigate(['galerie'])
 
     this.httpClient
     .post('https://recette-1eee0.firebaseio.com/recettes.json', recettes)
     .subscribe(() =>{
-        console.log('ok');
+      console.log('ok');
+      this.router.navigate(['galerie'])
     })
   }
 
